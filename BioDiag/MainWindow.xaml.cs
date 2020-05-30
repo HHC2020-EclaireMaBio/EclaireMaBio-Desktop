@@ -12,20 +12,20 @@ namespace BioDiag
     {
         public MainWindow()
         {
-            Console.WriteLine("Begin...");
             InitializeComponent();
-            Console.WriteLine("Began...");
-
-            //MainNavFrame.Navigate(null);
-            //MainNavFrame.Navigate(new DragDropAnalysisPage());
         }
 
         private async void Window_ContentRendered(object sender, EventArgs e)
         {
-            Console.WriteLine("ContentRendered");
             var view = new AuthenticationDialog { };
 
             await DialogHost.Show(view, "RootDialog");
+
+            if (view.authDone)
+            {
+                MainNavFrame.Navigate(null);
+                MainNavFrame.Navigate(new DragDropAnalysisPage());
+            }
         }
     }
 }

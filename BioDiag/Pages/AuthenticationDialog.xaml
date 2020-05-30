@@ -7,24 +7,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="400">
     <Grid>
-        <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <Viewbox>
                     <!--<Image Width="64" Height="64" Source="/External/ProtipBlue.png"/>-->
-                    <Image Width="150" Height="64" Source="/Resources/logo.jpg"/>
+                    <Image Width="150" Height="150" Source="/Resources/logo.png" Margin="0, 20"/>
                 </Viewbox>
             </StackPanel>
 
-            <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap"
+            <!--<TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap"
                        Style="{StaticResource MaterialDesignBody2TextBlock}" TextAlignment="Center"
                        FontStyle="Italic" Text="Comprendre ses analyses biologiques" />
             <TextBlock HorizontalAlignment="Center" Margin="0, 0" TextWrapping="Wrap"
                        Style="{StaticResource MaterialDesignBody2TextBlock}" TextAlignment="Center"
-                       FontStyle="Italic" Text="en un clin d'oeil" />
+                       FontStyle="Italic" Text="en un clin d'oeil" />-->
 
             <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Center">
                 <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center"/>
                 <TextBox x:Name="LoginTextBox" materialDesign:HintAssist.Hint="Identifiant"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                          VerticalAlignment="Stretch" Width="200" Margin="10"
                          Text="{Binding UpdateSourceTrigger=LostFocus, Path=PatientName,
                          ValidatesOnDataErrors=true, NotifyOnValidationError=true}">
@@ -33,7 +34,8 @@
 
             <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Center">
                 <materialDesign:PackIcon Kind="Key" VerticalAlignment="Center"/>
-                <PasswordBox x:Name="PasswdTextBox" materialDesign:HintAssist.Hint="Mot de passe" 
+                <PasswordBox x:Name="PasswdTextBox" materialDesign:HintAssist.Hint="Mot de passe"
+                             Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
                              VerticalAlignment="Stretch" Width="200" Margin="10">
                 </PasswordBox>
 
@@ -45,6 +47,20 @@
 
             <TextBlock x:Name="AuthErrorTextBox" Margin="10" Visibility="Hidden"
                        VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Margin="0,20,0,20" TextWrapping="Wrap" Grid.Column="0"
+                       Style="{StaticResource MaterialDesignBody2TextBlock}" TextAlignment="Center"
+                       FontStyle="Italic" Text="Mot de passe oublié?" Foreground="Gray"/>
+                <TextBlock Margin="0,20,0,20" TextWrapping="Wrap" Grid.Column="1"
+                       Style="{StaticResource MaterialDesignBody2TextBlock}" TextAlignment="Center"
+                       Text="Créez un compte" Foreground="CornflowerBlue"/>
+            </Grid>
+            
         </StackPanel>
     </Grid>
 </UserControl>

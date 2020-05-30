@@ -18,6 +18,7 @@ namespace BioDiag.Pages
     /// </summary>
     public partial class AuthenticationDialog : UserControl
     {
+        public bool authDone;
         public AuthenticationDialog()
         {
             InitializeComponent();
@@ -37,6 +38,17 @@ namespace BioDiag.Pages
             {
                 AuthErrorTextBox.Visibility = Visibility.Visible;
                 AuthErrorTextBox.Text = "Mot de passe non renseigné";
+                return;
+            }
+
+            if (LoginTextBox.Text == "JDC" && PasswdTextBox.Password == "aaa")
+            {
+                authDone = true;
+                MaterialDesignThemes.Wpf.DialogHost.CloseDialogCommand.Execute(null, null);
+            }
+            else
+            {
+                AuthErrorTextBox.Text = "Identifiant / Mot de passe non reconnus";
                 return;
             }
         }
