@@ -24,7 +24,8 @@ namespace BioDiag
             if (view.authDone)
             {
                 MainNavFrame.Navigate(null);
-                MainNavFrame.Navigate(new DragDropAnalysisPage());
+                // MainNavFrame.Navigate(new DragDropAnalysisPage());
+                MainNavFrame.Navigate(new HomePage());
             }
         }
     }

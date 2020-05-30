@@ -7,15 +7,27 @@
         mc:Ignorable="d"
         Title="Eclaire ma Bio!"
         WindowStartupLocation="CenterScreen"
-        Height="768" Width="1366"
+        Height="600" Width="800"
         ContentRendered="Window_ContentRendered">
 
     <materialDesign:DialogHost Identifier="RootDialog">
         <Grid>
-            <Image Width="450" Height="450" Source="/Resources/logo.png"
-                   Margin="0, 20" Opacity="0.25"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--<Image Width="450" Height="450" Source="/Resources/logo.png" Margin="0, 20" Opacity="0.25"/>-->
 
-            <Frame x:Name="MainNavFrame" NavigationUIVisibility="Hidden"/>
+            <materialDesign:ColorZone Mode="PrimaryMid"  Grid.Row="0"
+                                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <TextBlock Text="Maryna Beaudaux" FontFamily="Trebuchet MS" FontWeight="Bold"
+                           VerticalAlignment="Center" FontSize="20"/>
+                    <Image Source="/Resources/mary.png" Width="50" Margin="5" />
+                </StackPanel>
+            </materialDesign:ColorZone>
+
+            <Frame x:Name="MainNavFrame" NavigationUIVisibility="Hidden" Grid.Row="1"/>
         </Grid>
     </materialDesign:DialogHost>
 </Window>

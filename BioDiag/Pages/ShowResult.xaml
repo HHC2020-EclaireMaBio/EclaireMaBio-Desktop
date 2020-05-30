@@ -1,0 +1,86 @@
+﻿<Page x:Class="BioDiag.Pages.ShowResult"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BioDiag.Pages" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShowResult">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="/Resources/Bio1.png" />
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+
+            <GroupBox Header="Vos informations" Style="{DynamicResource MaterialDesignGroupBox}"
+                        Margin="0"  BorderThickness="0" FontWeight="Bold">
+                <StackPanel>
+                    <TextBlock Margin="2">Vous avez 30 ans</TextBlock>
+                    <TextBlock Margin="2">Vous êtes fumeur</TextBlock>
+                    <TextBlock Margin="2">Vous souffrez de polyarthrite</TextBlock>
+                    <TextBlock Margin="2">Vous êtes sous traitement de cortisone depuis le 25/03/2020</TextBlock>
+                    <TextBlock Margin="2">Vous avez signalé des douleurs articulaires depuis le 12/04/2020</TextBlock>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Vos résultats de biologie" Style="{DynamicResource MaterialDesignGroupBox}"
+                        Margin="0"  BorderThickness="0" Grid.Row="1" FontWeight="Bold">
+                <StackPanel>
+                    <DockPanel>
+                        <TextBlock Margin="2">Vos Leucocytes sont à 14.8 G/l.</TextBlock>
+                        <materialDesign:PackIcon Kind="CommentQuestion" VerticalAlignment="Center" Margin="6,0"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <TextBlock Margin="2">Vos Lymphocytes sont 5,54 G/l</TextBlock>
+                        <materialDesign:PackIcon Kind="CommentQuestion" VerticalAlignment="Center" Margin="6,0"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <TextBlock Margin="2">Vos Monocytes sont à 1.26 G/l</TextBlock>
+                        <materialDesign:PackIcon Kind="CommentQuestion" VerticalAlignment="Center" Margin="6,0"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <TextBlock Margin="2">Vos plaquettes sont à 528 G/l</TextBlock>
+                        <materialDesign:PackIcon Kind="CommentQuestion" VerticalAlignment="Center" Margin="6,0"/>
+                    </DockPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <materialDesign:ColorZone Mode="Accent" Padding="16" Grid.Row="2">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock VerticalAlignment="Center" Margin="0 0 0 0"
+                               FontWeight="Bold">
+                        - Vos résultats sont en amélioration par rapport aux précédents.
+                    </TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="0 0 0 0"
+                               FontWeight="Bold">
+                        - Plusieurs marqueurs indiquent une inflammation.
+                    </TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="0 0 0 0"
+                               FontWeight="Bold" TextWrapping="Wrap">
+                        - Votre biologie et vos renseignements indiquent une possible poussée de vos rhumatisme.
+                    </TextBlock>
+                </StackPanel>
+            </materialDesign:ColorZone>
+
+            <!--<GroupBox Header="Nos indications" Style="{DynamicResource MaterialDesignGroupBox}"
+                        Margin="0"  BorderThickness="0" Grid.Row="2">
+                <StackPanel>
+                    <TextBlock Margin="2">Plusieurs marqueurs indiquent une inflammation.</TextBlock>
+                    <TextBlock Margin="2">Votre biologie et vos renseignements indiquent une possible poussée de vos rhumatisme.</TextBlock>
+                </StackPanel>
+            </GroupBox>-->
+        </Grid>
+
+        
+    </Grid>
+</Page>
