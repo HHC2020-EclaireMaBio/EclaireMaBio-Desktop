@@ -62,9 +62,8 @@ namespace BioDiag.Pages
                 Console.WriteLine($"ERROR : File does not exist at path {pathtofile}");
             }
 
-            //var myImg = @"C:\Users\jbeaudaux\Desktop\BioDagtic\input-sample-image.png";
-            //var myImg = @"C:\Users\jbeaudaux\Desktop\BioDagtic\exemple1_nopwd-1.png";
-            var myImg = @"C:\Users\jbeaudaux\Desktop\BioDagtic\exemple1_nopwd.pdf";
+            //var myImg = @"C:\Users\jbeaudaux\Desktop\HHC\Analyses\exemple1_nopwd.pdf";
+            //var myImg = @"C:\Users\jbeaudaux\Desktop\HHC\Analyses\exemple1_nopwd-1.png";
             var ocrEngine = new TesseractEngine(@"C:\Users\jbeaudaux\Desktop\BioDagtic\tessdata", "fra", EngineMode.Default);
 
             // ToDo : Filtrage (augmentation du contraste)
@@ -74,12 +73,13 @@ namespace BioDiag.Pages
             // im = im.convert('1')
 
 
-            using (var imageWithText = Pix.LoadFromFile(myImg))
+            using (var imageWithText = Pix.LoadFromFile(pathtofile))
             {
                 using (var page = ocrEngine.Process(imageWithText))
                 {
                     var text = page.GetText();
-                    //DebugBox.Text += text;
+                    Console.WriteLine(text);
+                    DebugTextBlock.Text += text;
                 }
             }
 

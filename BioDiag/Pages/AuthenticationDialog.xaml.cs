@@ -41,13 +41,15 @@ namespace BioDiag.Pages
                 return;
             }
 
-            if (LoginTextBox.Text == "JDC" && PasswdTextBox.Password == "aaa")
+            // if (LoginTextBox.Text == "JDC" && PasswdTextBox.Password == "aaa")
+            if (LoginTextBox.Text.Length >= 3 && PasswdTextBox.Password.Length >= 3)
             {
                 authDone = true;
                 MaterialDesignThemes.Wpf.DialogHost.CloseDialogCommand.Execute(null, null);
             }
             else
             {
+                AuthErrorTextBox.Visibility = Visibility.Visible;
                 AuthErrorTextBox.Text = "Identifiant / Mot de passe non reconnus";
                 return;
             }

@@ -9,12 +9,12 @@
     <Grid>
         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
 
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20">
+            <!-- <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20">
                 <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4"
                              IsChecked="True" Content="Je suis patient" />
                 <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4"
                              IsChecked="False" Content="Je suis médecin" />
-            </StackPanel>
+            </StackPanel> -->
 
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <Viewbox>
